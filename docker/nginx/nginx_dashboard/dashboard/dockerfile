@@ -1,0 +1,12 @@
+FROM openjdk:12-alpine
+ARG  RELEASE_VERSION
+
+LABEL description="DASHBOARD" version="${RELEASE_VERSION}" owner="ITM"
+
+RUN apk add --no-cache bash ttf-dejavu coreutils
+
+COPY ./dashboard-src/dashboard-${RELEASE_VERSION}.jar ./dashboard-postgres.jar
+
+EXPOSE 8443
+
+CMD ["java","-Dname=Dashboard[dashboard-postgres]","-Dspring.profiles.active=dashboard-postgres","-Dlogging.config=logback-spring.xml","-Dfile.encoding=UTF8", "-jar", "dashboard-postgres.jar"]

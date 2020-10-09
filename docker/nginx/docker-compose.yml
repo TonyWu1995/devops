@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  nginx:
+    image: nginx:1.15-alpine
+    container_name: nginx
+    volumes:
+      - ./conf.d:/etc/nginx/conf.d/
+      - ./log:/var/log/nginx
+      - ./www:/usr/share/nginx/html
+    ports:
+      - "80:80"
+      - "8080:8080"

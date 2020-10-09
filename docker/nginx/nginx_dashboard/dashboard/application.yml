@@ -1,0 +1,54 @@
+spring:
+  application.name: "DASHBOARD"
+  jpa.hibernate.use-new-id-generator-mappings: true
+  datasource:
+    hikari: # https://github.com/brettwooldridge/HikariCP (uses milliseconds for all time values)
+      maximum-pool-size: 30
+      minimum-idle: 6
+      idle-timeout: 600000
+      connection-timeout: 30000
+      max-lifetime: 1800000
+    url: jdbc:h2:mem:test;DB_CLOSE_ON_EXIT=FALSE
+    # url: jdbc:h2:file:~/data/test;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE
+    username: sa
+    password: sa
+    driver-class-name: org.h2.Driver
+
+server:
+  port: 8443
+
+logging:
+  level:
+    root: INFO
+    com.itrustmachines: DEBUG
+
+management:
+  endpoint:
+    health:
+      show-details: always
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: prometheus,health
+  metrics:
+    tags:
+      application: ${spring.application.name}
+  health:
+    diskspace:
+      enabled: true
+    defaults:
+      enabled: false
+
+spo-dashboard-client-api:
+  spo-server-url: http://spo-server:4430
+  contract-address: "0xc3f4Ec98A613C8E2BB552Db936f1F5d85fE083Ec"
+
+thumbnail-file:
+  saving-method: LOCAL
+  local:
+    folder-path: "./thumbnail/"
+  azure:
+    connection-string-env: ""
+    container-name: ""

@@ -1,0 +1,12 @@
+FROM openjdk:12-alpine
+ARG  RELEASE_VERSION
+
+LABEL description="SPO_SERVER" version="${RELEASE_VERSION}" owner="ITM"
+
+RUN apk add --no-cache bash ttf-dejavu coreutils
+
+COPY ./spo-server-src/spo-server-reactive-postgres-${RELEASE_VERSION}.jar ./spo-server.jar
+
+EXPOSE 4430
+
+CMD ["java","-Dname=SpoServer[spo-server]","-Dfile.encoding=UTF8","-Dlogging.config=logback-spring.xml","-Dspring.profiles.active=spo-server", "-jar", "spo-server.jar"]

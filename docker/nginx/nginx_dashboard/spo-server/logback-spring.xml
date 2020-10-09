@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+
+<!-- Ref:
+- https://www.jianshu.com/p/b34980d85377
+- http://netkiller.sourceforge.net/spring/spring/boot/SpringBoot.ELK.html
+- https://github.com/Evan1120/springboot-logback-logstash-demo
+- https://juejin.im/post/5d6c6a33e51d4561e43a6cf0
+-->
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+    <!--    <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">-->
+    <!--        <destination>140.112.207.17:9600</destination>-->
+    <!--        <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder"/>-->
+    <!--    </appender>-->
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%date{ISO8601}][%level][%thread][%logger{0}] %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+    <appender name="logstash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <param name="Encoding" value="UTF-8"/>
+        <remoteHost>http://itm-monitor.itm.monster</remoteHost>
+        <port>5000</port>
+        <!-- encoder is required -->
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <customFields>{"applicationName":"${applicationName}"}</customFields>
+        </encoder>
+    </appender>
+      <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>./logs/SpoServer_%d{yyyy-MM-dd_HH}.log.zip</fileNamePattern>
+                <maxHistory>30</maxHistory>
+                <totalSizeCap>4GB</totalSizeCap>
+            </rollingPolicy>
+            <encoder>
+                <pattern>[%date{ISO8601}][%level][%thread][%logger{0}] %msg%n</pattern>
+                <charset>UTF-8</charset>
+            </encoder>
+        </appender>
+   
+
+        <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+                <fileNamePattern>./logs/SpoServer_%d{yyyy-MM-dd_HH}_%i.log.zip</fileNamePattern>
+                <maxHistory>30</maxHistory>
+                <maxFileSize>100MB</maxFileSize>
+                <totalSizeCap>500MB</totalSizeCap>
+            </rollingPolicy>
+            <encoder>
+                <pattern>[%date{ISO8601}][%level][%thread][%logger{0}] %msg%n</pattern>
+                <charset>UTF-8</charset>
+            </encoder>
+        </appender>
+
+
+
+        <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+                <fileNamePattern>./logs/SpoServer_%d{yyyy-MM-dd}_%i.log.zip</fileNamePattern>
+                <maxFileSize>50MB</maxFileSize>
+                <totalSizeCap>2500MB</totalSizeCap>
+            </rollingPolicy>
+            <encoder>
+                <pattern>[%date{ISO8601}][%level][%thread][%logger{0}] %msg%n</pattern>
+                <charset>UTF-8</charset>
+            </encoder>
+        </appender>
+
+
+    <root level="INFO">
+        <!-- <appender-ref ref="LOGSTASH"/> -->
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE"/>
+    </root>
+</configuration>

@@ -1,0 +1,34 @@
+version: "3"
+
+services:
+  nginx:
+    image: nginx:1.15-alpine
+    container_name: nginx
+    restart: always
+    volumes:
+      - ./conf.d:/etc/nginx/conf.d/
+      - ./log:/var/log/nginx
+      - ./www:/usr/share/nginx/html
+    ports:
+      - "80:80"
+      - "8080:8080"
+  spo-server:
+    container_name: spo-server
+    image: spo-server:1.2.0.M1
+    depends_on:
+      - nginx
+    ports:
+      - "4430:4430"
+    volumes:
+      - ./spo-server/logback-spring.xml:/logback-spring.xml
+      - ./spo-server/application.yml:/application.yml
+  dashboard:
+    container_name: dashboard
+    image: dashboard:1.2.0.M1
+    depends_on:
+      - nginx
+    ports:
+      - "8443:8443"
+    volumes:
+      - ./dashboard/logback-spring.xml:/logback-spring.xml
+      - ./dashboard/application.yml:/application.yml

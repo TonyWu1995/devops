@@ -1,0 +1,97 @@
+self:
+  version: ""
+  time: ""
+
+spring:
+  application.name: "SPO_RX_POSTGRES_SERVER"
+  datasource:
+    hikari: # https://github.com/brettwooldridge/HikariCP (uses milliseconds for all time values)
+      maximum-pool-size: 50
+      minimum-idle: 10
+      idle-timeout: 600000
+      connection-timeout: 30000
+      max-lifetime: 1800000
+    url: jdbc:h2:mem:test;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password: sa
+    driver-class-name: org.h2.Driver
+  jpa.hibernate.use-new-id-generator-mappings: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  thymeleaf.cache: false
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 30MB
+      max-request-size: 32MB
+
+management:
+  endpoint:
+    health:
+      show-details: always
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus
+  metrics:
+    tags:
+      application: ${spring.application.name}
+
+server:
+  port: 4430
+  tomcat:
+    mbeanregistry:
+      enabled: true
+
+logging:
+  level:
+    root: INFO
+    com.itrustmachines: DEBUG
+
+ledger-boost-contract:
+  contract-name: LedgerBooster
+  private-key-env: "02125662AD0C4C19A8D9AFEE89377DBC02125662AD0C4C19A8D9AFEE89377DBC"
+  contract-address: "0xc434650Ef2C1FA7B0b1a25615f9847e0C65874Ba"
+  server-wallet-address: "0x6B48f7395040793684B201776368Bb1774e4f6C7"
+  node-url: "https://rinkeby.infura.io/v3/"
+  infura-project-id-env: "eb0e4d6f6c2c4cd49ecfc605cb60e358"
+  etherscan-url: "https://rinkeby.etherscan.io/"
+  authentication:
+    need-auth: false
+    username: ""
+    password: ""
+
+clearance:
+  cron: "0 0/2 * * * ?"
+  clearance-max-count: 3
+  clearance-min-count: 1
+
+binary-file:
+  saving-method: LOCAL
+  local:
+    folder-path: "./binaryFile/"
+  azure:
+    local-temp-dir: "./tpmTemp/"
+    connection-string-env: ""
+    container-name: ""
+
+tpm-tree-serialization:
+  saving-method: LOCAL
+  local:
+    folder-path: "./tpmTreeDir/"
+    file-prefix: "TpmTree_"
+    clean-cron: "0 0 0/6 * * ?"
+    expire-days: 36500
+    folder-max-size: "3GB" # 目前考慮GB跟MB兩情況
+  azure:
+    local-temp-dir: "./tpmTemp/"
+    connection-string-env: ""
+    container-name: ""
+
+activation:
+  public-key-path: "./spo-server-reactive-postgres/ITM.pub"
+  license-file-path: "./spo-server-reactive-postgres/ITM.License"

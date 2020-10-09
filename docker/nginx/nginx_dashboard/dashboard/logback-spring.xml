@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+
+<configuration>
+  <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>[%date{ISO8601}][%level][%thread][%logger{0}] %msg%n</pattern>
+      <charset>UTF-8</charset>
+    </encoder>
+  </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+      <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+        <fileNamePattern>./logs/Dashboard_%d{yyyy-MM-dd_HH}.log.zip</fileNamePattern>
+          <maxHistory>30</maxHistory>
+          <totalSizeCap>4GB</totalSizeCap>
+      </rollingPolicy>
+      <encoder>
+        <pattern>[%date{ISO8601}][%level][%thread][%logger{0}] %msg%n</pattern>
+        <charset>UTF-8</charset>
+      </encoder>
+    </appender>
+
+  
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+      <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+        <fileNamePattern>./logs/Dashboard_%d{yyyy-MM-dd}_%i.log.zip</fileNamePattern>
+        <maxFileSize>50MB</maxFileSize>
+        <totalSizeCap>2500MB</totalSizeCap>
+      </rollingPolicy>
+      <encoder>
+        <pattern>[%date{ISO8601}][%level][%thread][%logger{0}] %msg%n</pattern>
+        <charset>UTF-8</charset>
+      </encoder>
+    </appender>
+
+  <root level="WARN">
+    <appender-ref ref="STDOUT" />
+    <appender-ref ref="FILE" />
+  </root>
+</configuration>
