@@ -1,0 +1,44 @@
+version: '3'
+networks:
+  consul-network:
+
+services:
+  consul1:
+    image: consul:1.8.6
+    container_name: consul1
+    restart: always
+    volumes: 
+      - ./consul1:/tmp/consul
+    ports:
+      - 8500:8500
+      - 8600:8600/udp
+      - 8300:8300
+      - 8301:8301
+      - 8302:8302
+    command: consul agent -server -ui -bootstrap-expect=2 -node=node1 -client=0.0.0.0 -datacenter=dc1 -data-dir=/tmp/consul
+    networks:
+      - consul-network
+  consul2:
+    image: consul:1.8.6
+    container_name: consul2
+    restart: always
+    depends_on: [consul1]
+    volumes: 
+      - ./consul2:/tmp/consul
+    ports:
+      - 8501:8500
+    command:  consul agent -server -retry-join=consul1 -node=node2 -bind=0.0.0.0 -client=0.0.0.0 -datacenter=dc1 -data-dir=/tmp/consul
+    networks:
+      - consul-network
+  consul3:
+    image: consul:1.8.6
+    depends_on: [consul1,consul2]
+    restart: always
+    container_name: consul3
+    volumes: 
+      - ./consul3:/tmp/consul
+    ports:
+      - 8502:8500
+    command: consul agent -server -retry-join=consul1 -node=node3 -bind=0.0.0.0 -client=0.0.0.0 -datacenter=dc1 -data-dir=/tmp/consul
+    networks:
+      - consul-network
