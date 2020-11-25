@@ -6,7 +6,8 @@ services:
     container_name: consul_server
     volumes: 
       - ./consul:/tmp/consul
+      - ./config:/consul/config
     ports:
       - 8500:8500
       - 8600:8600/udp
-    command:  consul agent -server -ui -node=server-1 -bootstrap-expect=1 -data-dir=/tmp/consul -dev -client=0.0.0.0
+    command:  consul agent -server -ui -node=server-1 -bootstrap-expect=1 -data-dir=/tmp/consul -dev -client=0.0.0.0 -config-file=/consul/config/basic_config.json
