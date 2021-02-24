@@ -10,4 +10,8 @@ services:
     ports:
       - 8500:8500
       - 8600:8600/udp
+<<<<<<< Updated upstream
     command:  consul agent -server -ui -node=server-1 -client 0.0.0.0 -bootstrap -bootstrap-expect 1 -data-dir=/consul/data 
+=======
+    command:  consul agent -server -ui -node=server-1 -bootstrap-expect=1 -data-dir=/tmp/consul -client=0.0.0.0 -config-file=/consul/config/basic_config.json
+>>>>>>> Stashed changes
