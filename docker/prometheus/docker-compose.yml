@@ -6,8 +6,7 @@ services:
     restart: always
     container_name: prometheus
     volumes:
-      - ./prometheus:/etc/prometheus/
-      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
       - "9090:9090"
    
@@ -17,6 +16,3 @@ services:
     container_name: grafana
     ports:
       - "3000:3000"
-    volumes:
-      - ./grafana/datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yaml
-  
