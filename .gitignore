@@ -1,3 +1,11 @@
 
 docker/mongodb/data/
 docker/jenkins/jenkins_data/
+docker/graylog/config
+docker/graylog/mongodb
+docker/graylog/plugin
+docker/prometheus/pormetheus_data
+
+docker/prometheus/
+docker/prometheus/grafana
+docker/prometheus/node
