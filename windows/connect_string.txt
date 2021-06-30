@@ -1,0 +1,3 @@
+psql postgresql://postgres:123456@127.0.0.1:5432
+
+psql -c 'SELECT*from pg_database' postgresql://postgres:123456@127.0.0.1:5432
