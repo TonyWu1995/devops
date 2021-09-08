@@ -1,10 +1,13 @@
 version: '3'
 services:
-    myvault:
+    vault:
         image: vault
         container_name: vault-server
         ports:
           - "8200:8200"
+        networks:
+          dev:
+            ipv4_address: 172.20.0.2
         volumes:
           - ./file:/vault/file
           - ./config:/vault/config
@@ -15,3 +18,12 @@ services:
         cap_add:
           - IPC_LOCK
         entrypoint: vault server -config=/vault/config/vault.json
+
+networks:
+    dev:
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: 172.20.0.0/16
+                  gateway: 172.20.0.1

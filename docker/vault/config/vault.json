@@ -6,7 +6,8 @@
             "tls_disable": "true"
         }
     },
-    "backend": {
+    
+    "storage": {
         "file": {
             "path": "/vault/file"
         }
