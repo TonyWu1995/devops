@@ -10,7 +10,7 @@ services:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
       - ./prometheus/:/etc/prometheus/
       # tsdb data
-      - ./prometheus_data:/prometheus
+      - ./prometheus/data:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
       # backup 
@@ -28,8 +28,13 @@ services:
     image: grafana/grafana:8.1.5
     restart: always
     container_name: grafana
+    environment:
+    
     volumes:
-      - ./grafana:/var/lib/grafana
+      # - ./grafana/config:/etc/grafana
+      - ./grafana/logs:/var/log/grafana
+      - ./grafana/plugins:/var/lib/grafana/plugins
+      - ./grafana/data:/var/lib/grafana
       - ./grafana/provisioning/:/etc/grafana/provisioning/
     ports:
       - "3000:3000"
