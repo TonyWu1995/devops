@@ -5,6 +5,7 @@ services:
     image: prom/prometheus:v2.30.0
     restart: always
     container_name: prometheus
+    user: "$UID:$GID"
     volumes:
       # config
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
@@ -28,8 +29,7 @@ services:
     image: grafana/grafana:8.1.5
     restart: always
     container_name: grafana
-    environment:
-    
+    user: "$UID:$GID"
     volumes:
       # - ./grafana/config:/etc/grafana
       - ./grafana/logs:/var/log/grafana
@@ -38,20 +38,3 @@ services:
       - ./grafana/provisioning/:/etc/grafana/provisioning/
     ports:
       - "3000:3000"
-
-  node-exporter:
-    image: prom/node-exporter
-    container_name: node_exporter
-    volumes:
-      - ./node/proc:/host/proc:ro
-      - ./node/sys:/host/sys:ro
-      - ./node:/rootfs:ro
-    command: 
-      - '--path.procfs=/host/proc' 
-      - '--path.sysfs=/host/sys'
-      - --collector.filesystem.ignored-mount-points
-      - "^/(sys|proc|dev|host|etc|rootfs/var/lib/docker/containers|rootfs/var/lib/docker/overlay2|rootfs/run/docker/netns|rootfs/var/lib/docker/aufs)($$|/)"
-    ports:
-      - 9100:9100
-    restart: always
-       
