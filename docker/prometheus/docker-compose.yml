@@ -31,10 +31,10 @@ services:
     container_name: grafana
     user: "$UID:$GID"
     volumes:
-      # - ./grafana/config:/etc/grafana
       - ./grafana/logs:/var/log/grafana
       - ./grafana/plugins:/var/lib/grafana/plugins
       - ./grafana/data:/var/lib/grafana
       - ./grafana/provisioning/:/etc/grafana/provisioning/
+      - ./grafana/defaults.ini:/usr/share/grafana/conf/defaults.ini
     ports:
       - "3000:3000"
