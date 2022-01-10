@@ -1,9 +1,9 @@
 version: '3.1'
 services:
   mongo:
-    image: mongo
+    image: mongo:5.0.5
     restart: always
-    container_name: 'mongo-server'
+    container_name: 'mongo'
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: admin
@@ -11,12 +11,3 @@ services:
       - 27017:27017
     volumes:
       - ./data:/data/db
-  mongo-express:
-    image: mongo-express
-    restart: always
-    container_name: 'mongo-ui'
-    ports:
-      - 8090:8081
-    environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
-      ME_CONFIG_MONGODB_ADMINPASSWORD: admin
