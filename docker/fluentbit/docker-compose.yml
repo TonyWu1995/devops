@@ -1,0 +1,7 @@
+version: '3'
+services:
+  fluentd:
+    image: fluent/fluent-bit:1.9.2
+    volumes:
+        - ./conf:/fluent-bit/etc
+        - ./logs:/fluent-bit/logs

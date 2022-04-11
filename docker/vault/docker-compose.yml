@@ -1,29 +1,29 @@
 version: '3'
 services:
-    vault:
-        image: vault
-        container_name: vault-server
-        ports:
-          - "8200:8200"
-        networks:
-          dev:
-            ipv4_address: 172.20.0.2
-        volumes:
-          - ./file:/vault/file
-          - ./config:/vault/config
-        environment:
-          - VAULT_ADDR=http://0.0.0.0:8200
-          - VAULT_API_ADDR=http://0.0.0.0:8200
-          - VAULT_ADDRESS=http://0.0.0.0:8200
-        cap_add:
-          - IPC_LOCK
-        entrypoint: vault server -config=/vault/config/vault.json
+  vault:
+    image: vault
+    container_name: vault-server
+    ports:
+      - "8200:8200"
+    networks:
+      dev:
+        ipv4_address: 172.20.0.2
+    volumes:
+      - ./file:/vault/file
+      - ./config:/vault/config
+    environment:
+      - VAULT_ADDR=http://0.0.0.0:8200
+      - VAULT_API_ADDR=http://0.0.0.0:8200
+      - VAULT_ADDRESS=http://0.0.0.0:8200
+    cap_add:
+      - IPC_LOCK
+    entrypoint: vault server -config=/vault/config/vault.json
 
 networks:
-    dev:
-        driver: bridge
-        ipam:
-            driver: default
-            config:
-                - subnet: 172.20.0.0/16
-                  gateway: 172.20.0.1
+  dev:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/16
+          gateway: 172.20.0.1

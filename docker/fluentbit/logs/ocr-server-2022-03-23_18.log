@@ -1,0 +1,490 @@
+[2022-03-23 18:00:18,236][INFO][restartedMain][OcrServerApplication][logStarting] Starting OcrServerApplication using Java 11.0.14 on Dg.local with PID 55277 (/Users/tony/project/gateweb/gwcsv/gwcsv-backend/ocr-server/target/classes started by tony in /Users/tony/project/gateweb/gwcsv/gwcsv-backend)
+[2022-03-23 18:00:18,236][DEBUG][restartedMain][OcrServerApplication][logStarting] Running with Spring Boot v2.5.7, Spring v5.3.13
+[2022-03-23 18:00:18,237][INFO][restartedMain][OcrServerApplication][logStartupProfileInfo] The following profiles are active: local-dev
+[2022-03-23 18:00:18,256][INFO][restartedMain][DevToolsPropertyDefaultsPostProcessor][logTo] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2022-03-23 18:00:18,256][INFO][restartedMain][DevToolsPropertyDefaultsPostProcessor][logTo] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2022-03-23 18:00:18,825][INFO][restartedMain][RepositoryConfigurationDelegate][registerRepositoriesIn] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2022-03-23 18:00:18,892][INFO][restartedMain][RepositoryConfigurationDelegate][registerRepositoriesIn] Finished Spring Data repository scanning in 62 ms. Found 11 JPA repository interfaces.
+[2022-03-23 18:00:19,280][INFO][restartedMain][TomcatWebServer][initialize] Tomcat initialized with port(s): 8080 (http)
+[2022-03-23 18:00:19,285][INFO][restartedMain][StandardService][log] Starting service [Tomcat]
+[2022-03-23 18:00:19,285][INFO][restartedMain][StandardEngine][log] Starting Servlet engine: [Apache Tomcat/9.0.55]
+[2022-03-23 18:00:19,316][INFO][restartedMain][[/]][log] Initializing Spring embedded WebApplicationContext
+[2022-03-23 18:00:19,316][INFO][restartedMain][ServletWebServerApplicationContext][prepareWebApplicationContext] Root WebApplicationContext: initialization completed in 1060 ms
+[2022-03-23 18:00:19,379][INFO][restartedMain][HikariDataSource][getConnection] HikariPool-1 - Starting...
+[2022-03-23 18:00:20,403][ERROR][restartedMain][HikariPool][throwPoolInitializationException] HikariPool-1 - Exception during pool initialization.
+org.postgresql.util.PSQLException: Connection to 127.0.0.1:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:303)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:51)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:225)
+	at org.postgresql.Driver.makeConnection(Driver.java:465)
+	at org.postgresql.Driver.connect(Driver.java:264)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration.lambda$h2Console$0(H2ConsoleAutoConfiguration.java:67)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory$DependencyObjectProvider.ifAvailable(DefaultListableBeanFactory.java:2035)
+	at org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration.h2Console(H2ConsoleAutoConfiguration.java:66)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:212)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:203)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:97)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:260)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:234)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5219)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1396)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1386)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:919)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:835)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1396)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1386)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:919)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:263)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:432)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:927)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:450)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:199)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:182)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:160)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:765)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.gateweb.vat.OcrServerApplication.main(OcrServerApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.base/java.net.Socket.connect(Socket.java:615)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:231)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:95)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:98)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:213)
+	... 78 common frames omitted
+[2022-03-23 18:00:20,483][INFO][restartedMain][JWTComponent][<init>] new instance=com.gateweb.vat.crypto.jwt.JWTComponent@79742035
+[2022-03-23 18:00:20,502][DEBUG][restartedMain][JwtAuthFilter][init] Filter 'jwtAuthFilter' configured for use
+[2022-03-23 18:00:20,545][INFO][restartedMain][LogHelper][logPersistenceUnitInformation] HHH000204: Processing PersistenceUnitInfo [name: default]
+[2022-03-23 18:00:20,568][INFO][restartedMain][Version][logVersion] HHH000412: Hibernate ORM core version 5.4.32.Final
+[2022-03-23 18:00:20,626][INFO][restartedMain][Version][<clinit>] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2022-03-23 18:00:20,677][INFO][restartedMain][HikariDataSource][getConnection] HikariPool-1 - Starting...
+[2022-03-23 18:00:21,684][ERROR][restartedMain][HikariPool][throwPoolInitializationException] HikariPool-1 - Exception during pool initialization.
+org.postgresql.util.PSQLException: Connection to 127.0.0.1:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:303)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:51)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:225)
+	at org.postgresql.Driver.makeConnection(Driver.java:465)
+	at org.postgresql.Driver.connect(Driver.java:264)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:765)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.gateweb.vat.OcrServerApplication.main(OcrServerApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.base/java.net.Socket.connect(Socket.java:615)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:231)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:95)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:98)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:213)
+	... 55 common frames omitted
+[2022-03-23 18:00:21,686][WARN][restartedMain][JdbcEnvironmentInitiator][initiateService] HHH000342: Could not obtain connection to query metadata
+org.postgresql.util.PSQLException: Connection to 127.0.0.1:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:303)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:51)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:225)
+	at org.postgresql.Driver.makeConnection(Driver.java:465)
+	at org.postgresql.Driver.connect(Driver.java:264)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:765)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.gateweb.vat.OcrServerApplication.main(OcrServerApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.base/java.net.Socket.connect(Socket.java:615)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:231)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:95)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:98)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:213)
+	... 55 common frames omitted
+[2022-03-23 18:00:21,689][ERROR][restartedMain][LocalContainerEntityManagerFactoryBean][buildNativeEntityManagerFactory] Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+[2022-03-23 18:00:21,691][WARN][restartedMain][AnnotationConfigServletWebServerApplicationContext][refresh] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+[2022-03-23 18:00:21,697][INFO][restartedMain][StandardService][log] Stopping service [Tomcat]
+[2022-03-23 18:00:21,715][INFO][restartedMain][ConditionEvaluationReportLoggingListener][logMessage] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[2022-03-23 18:00:21,730][ERROR][restartedMain][SpringApplication][reportFailure] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:765)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.gateweb.vat.OcrServerApplication.main(OcrServerApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:275)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 21 common frames omitted
+Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:100)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:54)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:137)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	... 38 common frames omitted
+[2022-03-23 18:00:30,979][INFO][restartedMain][OcrServerApplication][logStarting] Starting OcrServerApplication using Java 11.0.14 on Dg.local with PID 55283 (/Users/tony/project/gateweb/gwcsv/gwcsv-backend/ocr-server/target/classes started by tony in /Users/tony/project/gateweb/gwcsv/gwcsv-backend)
+[2022-03-23 18:00:30,980][DEBUG][restartedMain][OcrServerApplication][logStarting] Running with Spring Boot v2.5.7, Spring v5.3.13
+[2022-03-23 18:00:30,980][INFO][restartedMain][OcrServerApplication][logStartupProfileInfo] No active profile set, falling back to default profiles: default
+[2022-03-23 18:00:31,000][INFO][restartedMain][DevToolsPropertyDefaultsPostProcessor][logTo] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2022-03-23 18:00:31,000][INFO][restartedMain][DevToolsPropertyDefaultsPostProcessor][logTo] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2022-03-23 18:00:31,534][INFO][restartedMain][RepositoryConfigurationDelegate][registerRepositoriesIn] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2022-03-23 18:00:31,591][INFO][restartedMain][RepositoryConfigurationDelegate][registerRepositoriesIn] Finished Spring Data repository scanning in 53 ms. Found 11 JPA repository interfaces.
+[2022-03-23 18:00:31,967][INFO][restartedMain][TomcatWebServer][initialize] Tomcat initialized with port(s): 8080 (http)
+[2022-03-23 18:00:31,972][INFO][restartedMain][StandardService][log] Starting service [Tomcat]
+[2022-03-23 18:00:31,972][INFO][restartedMain][StandardEngine][log] Starting Servlet engine: [Apache Tomcat/9.0.55]
+[2022-03-23 18:00:32,004][INFO][restartedMain][[/]][log] Initializing Spring embedded WebApplicationContext
+[2022-03-23 18:00:32,004][INFO][restartedMain][ServletWebServerApplicationContext][prepareWebApplicationContext] Root WebApplicationContext: initialization completed in 1003 ms
+[2022-03-23 18:00:32,069][INFO][restartedMain][HikariDataSource][getConnection] HikariPool-1 - Starting...
+[2022-03-23 18:00:32,113][INFO][restartedMain][HikariDataSource][getConnection] HikariPool-1 - Start completed.
+[2022-03-23 18:00:32,116][INFO][restartedMain][H2ConsoleAutoConfiguration][lambda$h2Console$0] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+[2022-03-23 18:00:32,173][INFO][restartedMain][JWTComponent][<init>] new instance=com.gateweb.vat.crypto.jwt.JWTComponent@23b0cee0
+[2022-03-23 18:00:32,194][DEBUG][restartedMain][JwtAuthFilter][init] Filter 'jwtAuthFilter' configured for use
+[2022-03-23 18:00:32,237][INFO][restartedMain][LogHelper][logPersistenceUnitInformation] HHH000204: Processing PersistenceUnitInfo [name: default]
+[2022-03-23 18:00:32,256][INFO][restartedMain][Version][logVersion] HHH000412: Hibernate ORM core version 5.4.32.Final
+[2022-03-23 18:00:32,303][INFO][restartedMain][Version][<clinit>] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2022-03-23 18:00:32,348][INFO][restartedMain][Dialect][<init>] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[2022-03-23 18:00:32,806][INFO][restartedMain][JtaPlatformInitiator][initiateService] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2022-03-23 18:00:32,811][INFO][restartedMain][LocalContainerEntityManagerFactoryBean][buildNativeEntityManagerFactory] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2022-03-23 18:00:32,943][WARN][restartedMain][JpaBaseConfiguration$JpaWebConfiguration][openEntityManagerInViewInterceptor] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2022-03-23 18:00:33,282][DEBUG][restartedMain][YearAssignConfiguration][initYearAssignCache] initYearAssignCache() init
+[2022-03-23 18:00:33,283][DEBUG][restartedMain][YearAssignCache][getVersion] getVersion() start
+[2022-03-23 18:00:33,283][INFO][restartedMain][YearAssignCache][<init>] new instance=YearAssignCache(version=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855, cache={}, lock=java.util.concurrent.locks.ReentrantReadWriteLock@2fe7515a[Write locks = 0, Read locks = 0])
+[2022-03-23 18:00:33,336][DEBUG][restartedMain][YearAssignCache][put] put() yearAssignSize=0
+[2022-03-23 18:00:33,336][DEBUG][restartedMain][YearAssignCache][put] put() version=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+[2022-03-23 18:00:33,336][DEBUG][restartedMain][YearAssignCache][getVersion] getVersion() start
+[2022-03-23 18:00:33,336][DEBUG][restartedMain][YearAssignConfiguration][initYearAssignCache] initYearAssignCache() cache=YearAssignCache(version=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855, cache={}, lock=java.util.concurrent.locks.ReentrantReadWriteLock@2fe7515a[Write locks = 0, Read locks = 0])
+[2022-03-23 18:00:33,338][DEBUG][restartedMain][YearAssignCache][getVersion] getVersion() start
+[2022-03-23 18:00:33,338][INFO][restartedMain][ImportAssignService][<init>] new instance=ImportAssignService(yearAssignGateway=YearAssignAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@ca06dfc, yearAssignCache=YearAssignCache(version=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855, cache={}, lock=java.util.concurrent.locks.ReentrantReadWriteLock@2fe7515a[Write locks = 0, Read locks = 0])))
+[2022-03-23 18:00:33,340][DEBUG][restartedMain][YearAssignCache][getVersion] getVersion() start
+[2022-03-23 18:00:33,340][INFO][restartedMain][GetAssignService][<init>] new instance=GetAssignService(yearAssignGateway=YearAssignAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@ca06dfc, yearAssignCache=YearAssignCache(version=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855, cache={}, lock=java.util.concurrent.locks.ReentrantReadWriteLock@2fe7515a[Write locks = 0, Read locks = 0])))
+[2022-03-23 18:00:33,340][DEBUG][restartedMain][YearAssignCache][getVersion] getVersion() start
+[2022-03-23 18:00:33,340][DEBUG][restartedMain][YearAssignCache][getVersion] getVersion() start
+[2022-03-23 18:00:33,340][INFO][restartedMain][YearAssignApi][<init>] new instance=YearAssignApi(service=ImportAssignService(yearAssignGateway=YearAssignAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@ca06dfc, yearAssignCache=YearAssignCache(version=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855, cache={}, lock=java.util.concurrent.locks.ReentrantReadWriteLock@2fe7515a[Write locks = 0, Read locks = 0]))), getAssignService=GetAssignService(yearAssignGateway=YearAssignAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@ca06dfc, yearAssignCache=YearAssignCache(version=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855, cache={}, lock=java.util.concurrent.locks.ReentrantReadWriteLock@2fe7515a[Write locks = 0, Read locks = 0]))))
+[2022-03-23 18:00:33,342][INFO][restartedMain][CreateAccountFirmService][<init>] new instance=CreateAccountFirmService(gateway=com.gateweb.vat.dataprovider.adapter.AccountingFirmAdapter@5ebf3512)
+[2022-03-23 18:00:33,343][INFO][restartedMain][UpdateAccountingFirmService][<init>] new instance=UpdateAccountingFirmService(accountingFirmGateway=com.gateweb.vat.dataprovider.adapter.AccountingFirmAdapter@5ebf3512)
+[2022-03-23 18:00:33,343][INFO][restartedMain][AccountFirmApi][<init>] new instance=AccountFirmApi(service=CreateAccountFirmService(gateway=com.gateweb.vat.dataprovider.adapter.AccountingFirmAdapter@5ebf3512), findAccountFirmService=com.gateweb.vat.usecase.accountingfirm.FindAccountFirmService@6327b60c, updateAccountingFirmService=UpdateAccountingFirmService(accountingFirmGateway=com.gateweb.vat.dataprovider.adapter.AccountingFirmAdapter@5ebf3512))
+[2022-03-23 18:00:33,348][INFO][restartedMain][CreateBusinessEntityService][<init>] new instance=CreateBusinessEntityService(gateway=com.gateweb.vat.dataprovider.adapter.AccountingFirmAdapter@5ebf3512)
+[2022-03-23 18:00:33,350][INFO][restartedMain][UpdateBusinessEntityService][<init>] new instance=UpdateBusinessEntityService(accountingFirmGateway=com.gateweb.vat.dataprovider.adapter.AccountingFirmAdapter@5ebf3512)
+[2022-03-23 18:00:33,350][INFO][restartedMain][BusinessEntityApi][<init>] new instance=BusinessEntityApi(service=CreateBusinessEntityService(gateway=com.gateweb.vat.dataprovider.adapter.AccountingFirmAdapter@5ebf3512), findBusinessEntityService=com.gateweb.vat.usecase.accountingfirm.FindBusinessEntityService@73455f7d, updateBusinessEntityService=UpdateBusinessEntityService(accountingFirmGateway=com.gateweb.vat.dataprovider.adapter.AccountingFirmAdapter@5ebf3512))
+[2022-03-23 18:00:33,354][DEBUG][restartedMain][EvidenceFileConfiguration][initFileGateway] initFileGateway() config=EvidenceFileConfig(saveType=LOCAL, folderPath=./test/)
+[2022-03-23 18:00:33,355][DEBUG][restartedMain][FileProvider][getInstance] getInstance() saveType=LOCAL
+[2022-03-23 18:00:33,355][INFO][restartedMain][LocalFileService][<init>] new instance()
+[2022-03-23 18:00:33,356][DEBUG][restartedMain][TaxValidatorConfiguration][initTaxValidator] initTaxValidator() start
+[2022-03-23 18:00:33,357][INFO][restartedMain][TaxValidator][<init>] new instance=TaxValidator(validModelMap={DUPLICATE_CASH_REGISTER_GUI_SUMMARY=com.gateweb.vat.usecase.evidence.validator.model.tax.SummaryModel@700b9f71, OTHER_EVIDENCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, TRIPLE_GUI_SUMMARY=com.gateweb.vat.usecase.evidence.validator.model.tax.SummaryModel@700b9f71, TELECOM_BILL=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, OTHER_EVIDENCE_SUMMARY=com.gateweb.vat.usecase.evidence.validator.model.tax.SummaryModel@700b9f71, TRIPLE_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, TRIPLE_CASH_REGISTER_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, ELECTRIC_BILL=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, DUPLICATE_GUI_ALLOWANCE_OR_OTHER_EVIDENCE_ALLOWANCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, DUPLICATE_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2CModel@5b68e36, EGUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, CUSTOMS_TAXABLE_EVIDENCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, TRIPLE_GUI_ALLOWANCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, DUPLICATE_CASH_REGISTER_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2CModel@5b68e36, WATER_BILL=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6})
+[2022-03-23 18:00:33,360][INFO][restartedMain][IdValidator][<init>] new instance=com.gateweb.vat.usecase.evidence.validator.IdValidator@585fa42b
+[2022-03-23 18:00:33,361][DEBUG][restartedMain][EvidenceValidatorConfiguration][initEvidenceValidator] initEvidenceValidator() start
+[2022-03-23 18:00:33,364][DEBUG][restartedMain][YearAssignCache][getVersion] getVersion() start
+[2022-03-23 18:00:33,361][INFO][restartedMain][EvidenceValidator][<init>] new instance=EvidenceValidator(accountingFirmGateway=com.gateweb.vat.dataprovider.adapter.AccountingFirmAdapter@5ebf3512, taxValidator=TaxValidator(validModelMap={DUPLICATE_CASH_REGISTER_GUI_SUMMARY=com.gateweb.vat.usecase.evidence.validator.model.tax.SummaryModel@700b9f71, OTHER_EVIDENCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, TRIPLE_GUI_SUMMARY=com.gateweb.vat.usecase.evidence.validator.model.tax.SummaryModel@700b9f71, TELECOM_BILL=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, OTHER_EVIDENCE_SUMMARY=com.gateweb.vat.usecase.evidence.validator.model.tax.SummaryModel@700b9f71, TRIPLE_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, TRIPLE_CASH_REGISTER_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, ELECTRIC_BILL=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, DUPLICATE_GUI_ALLOWANCE_OR_OTHER_EVIDENCE_ALLOWANCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, DUPLICATE_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2CModel@5b68e36, EGUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, CUSTOMS_TAXABLE_EVIDENCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, TRIPLE_GUI_ALLOWANCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, DUPLICATE_CASH_REGISTER_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2CModel@5b68e36, WATER_BILL=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6}), idValidator=com.gateweb.vat.usecase.evidence.validator.IdValidator@585fa42b, yearAssignGateway=YearAssignAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@ca06dfc, yearAssignCache=YearAssignCache(version=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855, cache={}, lock=java.util.concurrent.locks.ReentrantReadWriteLock@2fe7515a[Write locks = 0, Read locks = 0])))
+[2022-03-23 18:00:33,365][INFO][restartedMain][UpdateEvidenceService][<init>] new instance=UpdateBillService(billGateway=null, fileGateway=null, config=null)
+[2022-03-23 18:00:33,365][INFO][restartedMain][UpdateBillService][<init>] new instance=UpdateBillService(billGateway=BillAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@1dad06fc), fileGateway=LocalFileService(), config=EvidenceFileConfig(saveType=LOCAL, folderPath=./test/))
+[2022-03-23 18:00:33,368][INFO][restartedMain][CreateService][<init>] new instance=com.gateweb.vat.usecase.evidence.bill.CreateBillService@6cfd6a2d
+[2022-03-23 18:00:33,368][INFO][restartedMain][CreateBillService][<init>] new instance=com.gateweb.vat.usecase.evidence.bill.CreateBillService@6cfd6a2d
+[2022-03-23 18:00:33,369][INFO][restartedMain][BillApi][<init>] new instance=BillApi(updateBillService=UpdateBillService(billGateway=BillAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@1dad06fc), fileGateway=LocalFileService(), config=EvidenceFileConfig(saveType=LOCAL, folderPath=./test/)), createBillCreateService=com.gateweb.vat.usecase.evidence.bill.CreateBillService@6cfd6a2d, deleteEvidenceService=DeleteBillService(billGateway=BillAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@1dad06fc)))
+[2022-03-23 18:00:33,371][INFO][restartedMain][UpdateEvidenceService][<init>] new instance=UpdateCustomsService(customsGateway=null, fileGateway=null, config=null)
+[2022-03-23 18:00:33,371][INFO][restartedMain][UpdateCustomsService][<init>] new instance=UpdateCustomsService(customsGateway=CustomsAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@3c47a961), fileGateway=LocalFileService(), config=EvidenceFileConfig(saveType=LOCAL, folderPath=./test/))
+[2022-03-23 18:00:33,372][INFO][restartedMain][CreateService][<init>] new instance=com.gateweb.vat.usecase.evidence.customs.CreateCustomsService@56985d9a
+[2022-03-23 18:00:33,372][INFO][restartedMain][CreateCustomsService][<init>] new instance=com.gateweb.vat.usecase.evidence.customs.CreateCustomsService@56985d9a
+[2022-03-23 18:00:33,372][INFO][restartedMain][CustomsApi][<init>] new instance=CustomsApi(updateCustomService=UpdateCustomsService(customsGateway=CustomsAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@3c47a961), fileGateway=LocalFileService(), config=EvidenceFileConfig(saveType=LOCAL, folderPath=./test/)), createCustomsBusinessTaxEvidenceService=com.gateweb.vat.usecase.evidence.customs.CreateCustomsService@56985d9a, deleteEvidenceService=DeleteCustomsService(customsGateway=CustomsAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@3c47a961)))
+[2022-03-23 18:00:33,374][INFO][restartedMain][DownloadTaxReportService][<init>] new instance=DownloadTaxReportService(config=TaxReportConfig(saveType=LOCAL, folderPath=./tax/), fileGateway=LocalFileService())
+[2022-03-23 18:00:33,375][INFO][restartedMain][DownloadTaxReportApi][<init>] new instance=DownloadTaxReportApi(downloadTaxReportService=DownloadTaxReportService(config=TaxReportConfig(saveType=LOCAL, folderPath=./tax/), fileGateway=LocalFileService()))
+[2022-03-23 18:00:33,377][INFO][restartedMain][FindEvidenceService][<init>] new instance=FindEvidenceService(evidenceGateway=EvidenceAdapter(guiRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae, guiTaxAllowanceRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@6322fc7c, billRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@1dad06fc, customsBusinessTaxRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@3c47a961, otherTaxEvidenceRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@23034316, tetuRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@57b68a16), fileGateway=LocalFileService(), guiGateway=GUIAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae, guiTaxAllowanceRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@6322fc7c), config=EvidenceFileConfig(saveType=LOCAL, folderPath=./test/))
+[2022-03-23 18:00:33,381][INFO][restartedMain][FindEvidenceApi][<init>] new instance=FindEvidenceApi(findEvidenceService=FindEvidenceService(evidenceGateway=EvidenceAdapter(guiRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae, guiTaxAllowanceRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@6322fc7c, billRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@1dad06fc, customsBusinessTaxRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@3c47a961, otherTaxEvidenceRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@23034316, tetuRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@57b68a16), fileGateway=LocalFileService(), guiGateway=GUIAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae, guiTaxAllowanceRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@6322fc7c), config=EvidenceFileConfig(saveType=LOCAL, folderPath=./test/)))
+[2022-03-23 18:00:33,383][INFO][restartedMain][CreateGUIBookService][<init>] new instance=CreateGUIBookService(gateway=GUIBookAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@7948fa48, guiRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae), accountingFirmGateway=com.gateweb.vat.dataprovider.adapter.AccountingFirmAdapter@5ebf3512, idValidator=com.gateweb.vat.usecase.evidence.validator.IdValidator@585fa42b)
+[2022-03-23 18:00:33,384][INFO][restartedMain][DeleteGUIBookService][<init>] new instance=DeleteGUIBookService(guiBookGateway=GUIBookAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@7948fa48, guiRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae), guiGateway=GUIAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae, guiTaxAllowanceRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@6322fc7c))
+[2022-03-23 18:00:33,385][INFO][restartedMain][UpdateGUIBookService][<init>] new instance=UpdateGUIBookService(guiBookGateway=GUIBookAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@7948fa48, guiRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae), idValidator=com.gateweb.vat.usecase.evidence.validator.IdValidator@585fa42b)
+[2022-03-23 18:00:33,386][INFO][restartedMain][FindGUIBookService][<init>] new instance=FindGUIBookService(gateway=GUIBookAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@7948fa48, guiRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae))
+[2022-03-23 18:00:33,387][INFO][restartedMain][OpenCloseGUIBookService][<init>] new instance=OpenCloseGUIBookService(guiFactory=com.gateweb.vat.gui.factory.GUIFactory@56889de0, gateway=GUIBookAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@7948fa48, guiRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae), guiGateway=GUIAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae, guiTaxAllowanceRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@6322fc7c))
+[2022-03-23 18:00:33,387][INFO][restartedMain][GUIBookApi][<init>] new instance=GUIBookApi(createGUIBookService=CreateGUIBookService(gateway=GUIBookAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@7948fa48, guiRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae), accountingFirmGateway=com.gateweb.vat.dataprovider.adapter.AccountingFirmAdapter@5ebf3512, idValidator=com.gateweb.vat.usecase.evidence.validator.IdValidator@585fa42b), deleteGUIBookService=DeleteGUIBookService(guiBookGateway=GUIBookAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@7948fa48, guiRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae), guiGateway=GUIAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae, guiTaxAllowanceRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@6322fc7c)), findGUIBookService=FindGUIBookService(gateway=GUIBookAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@7948fa48, guiRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae)), openCloseGUIBookService=OpenCloseGUIBookService(guiFactory=com.gateweb.vat.gui.factory.GUIFactory@56889de0, gateway=GUIBookAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@7948fa48, guiRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae), guiGateway=GUIAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae, guiTaxAllowanceRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@6322fc7c)), updateGUIBookService=UpdateGUIBookService(guiBookGateway=GUIBookAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@7948fa48, guiRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae), idValidator=com.gateweb.vat.usecase.evidence.validator.IdValidator@585fa42b))
+[2022-03-23 18:00:33,393][DEBUG][restartedMain][FileProvider][getInstance] getInstance() saveType=LOCAL
+[2022-03-23 18:00:33,393][INFO][restartedMain][GenTaxReportService][<init>] new instance=GenTaxReportService(accountingFirmGateway=com.gateweb.vat.dataprovider.adapter.AccountingFirmAdapter@5ebf3512, evidenceGateway=EvidenceAdapter(guiRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae, guiTaxAllowanceRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@6322fc7c, billRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@1dad06fc, customsBusinessTaxRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@3c47a961, otherTaxEvidenceRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@23034316, tetuRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@57b68a16), fileGateway=LocalFileService(), guiBookGateway=GUIBookAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@7948fa48, guiRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae), config=TaxReportConfig(saveType=LOCAL, folderPath=./tax/))
+[2022-03-23 18:00:33,394][INFO][restartedMain][GenTaxReportApi][<init>] new instance=GenTaxReportApi(genTaxReportService=GenTaxReportService(accountingFirmGateway=com.gateweb.vat.dataprovider.adapter.AccountingFirmAdapter@5ebf3512, evidenceGateway=EvidenceAdapter(guiRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae, guiTaxAllowanceRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@6322fc7c, billRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@1dad06fc, customsBusinessTaxRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@3c47a961, otherTaxEvidenceRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@23034316, tetuRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@57b68a16), fileGateway=LocalFileService(), guiBookGateway=GUIBookAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@7948fa48, guiRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae), config=TaxReportConfig(saveType=LOCAL, folderPath=./tax/)))
+[2022-03-23 18:00:33,396][INFO][restartedMain][CreateGUIService][<init>] new instance=CreateInputGUIService()
+[2022-03-23 18:00:33,396][INFO][restartedMain][CreateInputGUIService][<init>] new instance=CreateInputGUIService()
+[2022-03-23 18:00:33,397][INFO][restartedMain][CreateGUIService][<init>] new instance=CreateOutputGUIService(guiBookGateway=null)
+[2022-03-23 18:00:33,397][INFO][restartedMain][CreateOutputGUIService][<init>] new instance=CreateOutputGUIService(guiBookGateway=GUIBookAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@7948fa48, guiRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae))
+[2022-03-23 18:00:33,398][INFO][restartedMain][CreateGUIStrategyService][<init>] new instance=CreateGUIStrategyService(createGUIServiceMap={INPUT=CreateInputGUIService(), OUTPUT=CreateOutputGUIService(guiBookGateway=GUIBookAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@7948fa48, guiRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae))})
+[2022-03-23 18:00:33,400][INFO][restartedMain][UpdateGUIService][<init>] new instance=UpdateInputGUIService()
+[2022-03-23 18:00:33,400][INFO][restartedMain][UpdateInputGUIService][<init>] new instance=UpdateInputGUIService()
+[2022-03-23 18:00:33,400][INFO][restartedMain][UpdateGUIService][<init>] new instance=UpdateOutputGUIService(guiBookGateway=null)
+[2022-03-23 18:00:33,400][INFO][restartedMain][UpdateOutputGUIService][<init>] new instance=UpdateOutputGUIService(guiBookGateway=GUIBookAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@7948fa48, guiRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae))
+[2022-03-23 18:00:33,401][INFO][restartedMain][UpdateGUIStrategyService][<init>] new instance=UpdateGUIStrategyService(updateGUIServiceMap={INPUT=UpdateInputGUIService(), OUTPUT=UpdateOutputGUIService(guiBookGateway=GUIBookAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@7948fa48, guiRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae))})
+[2022-03-23 18:00:33,402][DEBUG][restartedMain][YearAssignCache][getVersion] getVersion() start
+[2022-03-23 18:00:33,402][INFO][restartedMain][CreateGUIAllowanceService][<init>] new instance=CreateGUIAllowanceService(guiGateway=GUIAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae, guiTaxAllowanceRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@6322fc7c), evidenceValidator=EvidenceValidator(accountingFirmGateway=com.gateweb.vat.dataprovider.adapter.AccountingFirmAdapter@5ebf3512, taxValidator=TaxValidator(validModelMap={DUPLICATE_CASH_REGISTER_GUI_SUMMARY=com.gateweb.vat.usecase.evidence.validator.model.tax.SummaryModel@700b9f71, OTHER_EVIDENCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, TRIPLE_GUI_SUMMARY=com.gateweb.vat.usecase.evidence.validator.model.tax.SummaryModel@700b9f71, TELECOM_BILL=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, OTHER_EVIDENCE_SUMMARY=com.gateweb.vat.usecase.evidence.validator.model.tax.SummaryModel@700b9f71, TRIPLE_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, TRIPLE_CASH_REGISTER_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, ELECTRIC_BILL=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, DUPLICATE_GUI_ALLOWANCE_OR_OTHER_EVIDENCE_ALLOWANCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, DUPLICATE_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2CModel@5b68e36, EGUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, CUSTOMS_TAXABLE_EVIDENCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, TRIPLE_GUI_ALLOWANCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, DUPLICATE_CASH_REGISTER_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2CModel@5b68e36, WATER_BILL=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6}), idValidator=com.gateweb.vat.usecase.evidence.validator.IdValidator@585fa42b, yearAssignGateway=YearAssignAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@ca06dfc, yearAssignCache=YearAssignCache(version=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855, cache={}, lock=java.util.concurrent.locks.ReentrantReadWriteLock@2fe7515a[Write locks = 0, Read locks = 0]))), fileGateway=LocalFileService(), config=EvidenceFileConfig(saveType=LOCAL, folderPath=./test/))
+[2022-03-23 18:00:33,403][DEBUG][restartedMain][YearAssignCache][getVersion] getVersion() start
+[2022-03-23 18:00:33,403][INFO][restartedMain][UpdateGUIAllowanceService][<init>] new instance=UpdateGUIAllowanceService(createGUIAllowanceService=CreateGUIAllowanceService(guiGateway=GUIAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae, guiTaxAllowanceRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@6322fc7c), evidenceValidator=EvidenceValidator(accountingFirmGateway=com.gateweb.vat.dataprovider.adapter.AccountingFirmAdapter@5ebf3512, taxValidator=TaxValidator(validModelMap={DUPLICATE_CASH_REGISTER_GUI_SUMMARY=com.gateweb.vat.usecase.evidence.validator.model.tax.SummaryModel@700b9f71, OTHER_EVIDENCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, TRIPLE_GUI_SUMMARY=com.gateweb.vat.usecase.evidence.validator.model.tax.SummaryModel@700b9f71, TELECOM_BILL=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, OTHER_EVIDENCE_SUMMARY=com.gateweb.vat.usecase.evidence.validator.model.tax.SummaryModel@700b9f71, TRIPLE_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, TRIPLE_CASH_REGISTER_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, ELECTRIC_BILL=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, DUPLICATE_GUI_ALLOWANCE_OR_OTHER_EVIDENCE_ALLOWANCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, DUPLICATE_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2CModel@5b68e36, EGUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, CUSTOMS_TAXABLE_EVIDENCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, TRIPLE_GUI_ALLOWANCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, DUPLICATE_CASH_REGISTER_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2CModel@5b68e36, WATER_BILL=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6}), idValidator=com.gateweb.vat.usecase.evidence.validator.IdValidator@585fa42b, yearAssignGateway=YearAssignAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@ca06dfc, yearAssignCache=YearAssignCache(version=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855, cache={}, lock=java.util.concurrent.locks.ReentrantReadWriteLock@2fe7515a[Write locks = 0, Read locks = 0]))), fileGateway=LocalFileService(), config=EvidenceFileConfig(saveType=LOCAL, folderPath=./test/)), guiGateway=GUIAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae, guiTaxAllowanceRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@6322fc7c), fileGateway=LocalFileService())
+[2022-03-23 18:00:33,404][DEBUG][restartedMain][YearAssignCache][getVersion] getVersion() start
+[2022-03-23 18:00:33,405][DEBUG][restartedMain][YearAssignCache][getVersion] getVersion() start
+[2022-03-23 18:00:33,404][INFO][restartedMain][GuiApi][<init>] new instance=GuiApi(createGUIService=CreateGUIStrategyService(createGUIServiceMap={INPUT=CreateInputGUIService(), OUTPUT=CreateOutputGUIService(guiBookGateway=GUIBookAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@7948fa48, guiRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae))}), createGUIAllowanceService=CreateGUIAllowanceService(guiGateway=GUIAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae, guiTaxAllowanceRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@6322fc7c), evidenceValidator=EvidenceValidator(accountingFirmGateway=com.gateweb.vat.dataprovider.adapter.AccountingFirmAdapter@5ebf3512, taxValidator=TaxValidator(validModelMap={DUPLICATE_CASH_REGISTER_GUI_SUMMARY=com.gateweb.vat.usecase.evidence.validator.model.tax.SummaryModel@700b9f71, OTHER_EVIDENCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, TRIPLE_GUI_SUMMARY=com.gateweb.vat.usecase.evidence.validator.model.tax.SummaryModel@700b9f71, TELECOM_BILL=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, OTHER_EVIDENCE_SUMMARY=com.gateweb.vat.usecase.evidence.validator.model.tax.SummaryModel@700b9f71, TRIPLE_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, TRIPLE_CASH_REGISTER_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, ELECTRIC_BILL=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, DUPLICATE_GUI_ALLOWANCE_OR_OTHER_EVIDENCE_ALLOWANCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, DUPLICATE_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2CModel@5b68e36, EGUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, CUSTOMS_TAXABLE_EVIDENCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, TRIPLE_GUI_ALLOWANCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, DUPLICATE_CASH_REGISTER_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2CModel@5b68e36, WATER_BILL=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6}), idValidator=com.gateweb.vat.usecase.evidence.validator.IdValidator@585fa42b, yearAssignGateway=YearAssignAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@ca06dfc, yearAssignCache=YearAssignCache(version=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855, cache={}, lock=java.util.concurrent.locks.ReentrantReadWriteLock@2fe7515a[Write locks = 0, Read locks = 0]))), fileGateway=LocalFileService(), config=EvidenceFileConfig(saveType=LOCAL, folderPath=./test/)), updateGUIService=UpdateGUIStrategyService(updateGUIServiceMap={INPUT=UpdateInputGUIService(), OUTPUT=UpdateOutputGUIService(guiBookGateway=GUIBookAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@7948fa48, guiRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae))}), deleteGUIService=DeleteGUIService(guiGateway=GUIAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae, guiTaxAllowanceRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@6322fc7c), guiBookGateway=GUIBookAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@7948fa48, guiRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae)), guiAllowanceService=UpdateGUIAllowanceService(createGUIAllowanceService=CreateGUIAllowanceService(guiGateway=GUIAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae, guiTaxAllowanceRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@6322fc7c), evidenceValidator=EvidenceValidator(accountingFirmGateway=com.gateweb.vat.dataprovider.adapter.AccountingFirmAdapter@5ebf3512, taxValidator=TaxValidator(validModelMap={DUPLICATE_CASH_REGISTER_GUI_SUMMARY=com.gateweb.vat.usecase.evidence.validator.model.tax.SummaryModel@700b9f71, OTHER_EVIDENCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, TRIPLE_GUI_SUMMARY=com.gateweb.vat.usecase.evidence.validator.model.tax.SummaryModel@700b9f71, TELECOM_BILL=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, OTHER_EVIDENCE_SUMMARY=com.gateweb.vat.usecase.evidence.validator.model.tax.SummaryModel@700b9f71, TRIPLE_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, TRIPLE_CASH_REGISTER_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, ELECTRIC_BILL=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, DUPLICATE_GUI_ALLOWANCE_OR_OTHER_EVIDENCE_ALLOWANCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, DUPLICATE_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2CModel@5b68e36, EGUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, CUSTOMS_TAXABLE_EVIDENCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, TRIPLE_GUI_ALLOWANCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, DUPLICATE_CASH_REGISTER_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2CModel@5b68e36, WATER_BILL=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6}), idValidator=com.gateweb.vat.usecase.evidence.validator.IdValidator@585fa42b, yearAssignGateway=YearAssignAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@ca06dfc, yearAssignCache=YearAssignCache(version=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855, cache={}, lock=java.util.concurrent.locks.ReentrantReadWriteLock@2fe7515a[Write locks = 0, Read locks = 0]))), fileGateway=LocalFileService(), config=EvidenceFileConfig(saveType=LOCAL, folderPath=./test/)), guiGateway=GUIAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae, guiTaxAllowanceRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@6322fc7c), fileGateway=LocalFileService()), deleteGUIAllowanceService=DeleteGUIAllowanceService(guiGateway=GUIAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae, guiTaxAllowanceRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@6322fc7c)))
+[2022-03-23 18:00:33,407][INFO][restartedMain][GUIImportEvidenceModel][<init>] new instance=com.gateweb.vat.usecase.evidence.txt.model.GUIImportEvidenceModel@7486955
+[2022-03-23 18:00:33,408][INFO][restartedMain][GUIAllowanceImportEvidenceModel][<init>] new instance=GUIAllowanceImportEvidenceModel(guiGateway=GUIAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae, guiTaxAllowanceRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@6322fc7c))
+[2022-03-23 18:00:33,408][DEBUG][restartedMain][ImportTxtConfiguration][initImportTxtService] initImportTxtService() config=ImportTxtConfig(evidenceTypeList=[33, 35])
+[2022-03-23 18:00:33,409][DEBUG][restartedMain][YearAssignCache][getVersion] getVersion() start
+[2022-03-23 18:00:33,408][INFO][restartedMain][ImportTxtService][<init>] new instance=ImportTxtService(importEvidenceModelMap={33=GUIAllowanceImportEvidenceModel(guiGateway=GUIAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae, guiTaxAllowanceRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@6322fc7c)), 35=com.gateweb.vat.usecase.evidence.txt.model.GUIImportEvidenceModel@7486955}, accountingFirmGateway=com.gateweb.vat.dataprovider.adapter.AccountingFirmAdapter@5ebf3512, evidenceValidator=EvidenceValidator(accountingFirmGateway=com.gateweb.vat.dataprovider.adapter.AccountingFirmAdapter@5ebf3512, taxValidator=TaxValidator(validModelMap={DUPLICATE_CASH_REGISTER_GUI_SUMMARY=com.gateweb.vat.usecase.evidence.validator.model.tax.SummaryModel@700b9f71, OTHER_EVIDENCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, TRIPLE_GUI_SUMMARY=com.gateweb.vat.usecase.evidence.validator.model.tax.SummaryModel@700b9f71, TELECOM_BILL=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, OTHER_EVIDENCE_SUMMARY=com.gateweb.vat.usecase.evidence.validator.model.tax.SummaryModel@700b9f71, TRIPLE_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, TRIPLE_CASH_REGISTER_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, ELECTRIC_BILL=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, DUPLICATE_GUI_ALLOWANCE_OR_OTHER_EVIDENCE_ALLOWANCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, DUPLICATE_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2CModel@5b68e36, EGUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, CUSTOMS_TAXABLE_EVIDENCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, TRIPLE_GUI_ALLOWANCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, DUPLICATE_CASH_REGISTER_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2CModel@5b68e36, WATER_BILL=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6}), idValidator=com.gateweb.vat.usecase.evidence.validator.IdValidator@585fa42b, yearAssignGateway=YearAssignAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@ca06dfc, yearAssignCache=YearAssignCache(version=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855, cache={}, lock=java.util.concurrent.locks.ReentrantReadWriteLock@2fe7515a[Write locks = 0, Read locks = 0]))), guiGateway=GUIAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae, guiTaxAllowanceRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@6322fc7c))
+[2022-03-23 18:00:33,409][DEBUG][restartedMain][YearAssignCache][getVersion] getVersion() start
+[2022-03-23 18:00:33,409][INFO][restartedMain][ImportTxtApi][<init>] new instance=ImportTxtApi(service=ImportTxtService(importEvidenceModelMap={33=GUIAllowanceImportEvidenceModel(guiGateway=GUIAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae, guiTaxAllowanceRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@6322fc7c)), 35=com.gateweb.vat.usecase.evidence.txt.model.GUIImportEvidenceModel@7486955}, accountingFirmGateway=com.gateweb.vat.dataprovider.adapter.AccountingFirmAdapter@5ebf3512, evidenceValidator=EvidenceValidator(accountingFirmGateway=com.gateweb.vat.dataprovider.adapter.AccountingFirmAdapter@5ebf3512, taxValidator=TaxValidator(validModelMap={DUPLICATE_CASH_REGISTER_GUI_SUMMARY=com.gateweb.vat.usecase.evidence.validator.model.tax.SummaryModel@700b9f71, OTHER_EVIDENCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, TRIPLE_GUI_SUMMARY=com.gateweb.vat.usecase.evidence.validator.model.tax.SummaryModel@700b9f71, TELECOM_BILL=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, OTHER_EVIDENCE_SUMMARY=com.gateweb.vat.usecase.evidence.validator.model.tax.SummaryModel@700b9f71, TRIPLE_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, TRIPLE_CASH_REGISTER_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, ELECTRIC_BILL=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, DUPLICATE_GUI_ALLOWANCE_OR_OTHER_EVIDENCE_ALLOWANCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, DUPLICATE_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2CModel@5b68e36, EGUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, CUSTOMS_TAXABLE_EVIDENCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, TRIPLE_GUI_ALLOWANCE=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6, DUPLICATE_CASH_REGISTER_GUI=com.gateweb.vat.usecase.evidence.validator.model.tax.B2CModel@5b68e36, WATER_BILL=com.gateweb.vat.usecase.evidence.validator.model.tax.B2BModel@16d435f6}), idValidator=com.gateweb.vat.usecase.evidence.validator.IdValidator@585fa42b, yearAssignGateway=YearAssignAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@ca06dfc, yearAssignCache=YearAssignCache(version=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855, cache={}, lock=java.util.concurrent.locks.ReentrantReadWriteLock@2fe7515a[Write locks = 0, Read locks = 0]))), guiGateway=GUIAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@61569fae, guiTaxAllowanceRepo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@6322fc7c)))
+[2022-03-23 18:00:33,410][INFO][restartedMain][CreateService][<init>] new instance=com.gateweb.vat.usecase.evidence.other.CreateOtherTaxEvidenceService@6e9730c2
+[2022-03-23 18:00:33,410][INFO][restartedMain][CreateOtherTaxEvidenceService][<init>] new instance=com.gateweb.vat.usecase.evidence.other.CreateOtherTaxEvidenceService@6e9730c2
+[2022-03-23 18:00:33,411][INFO][restartedMain][UpdateEvidenceService][<init>] new instance=UpdateOtherEvidenceService(otherTaxEvidenceGateway=null, fileGateway=null, config=null)
+[2022-03-23 18:00:33,411][INFO][restartedMain][UpdateOtherEvidenceService][<init>] new instance=UpdateOtherEvidenceService(otherTaxEvidenceGateway=OtherEvidenceAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@23034316), fileGateway=LocalFileService(), config=EvidenceFileConfig(saveType=LOCAL, folderPath=./test/))
+[2022-03-23 18:00:33,411][INFO][restartedMain][OtherEvidenceApi][<init>] new instance=OtherEvidenceApi(createOtherEvidenceService=com.gateweb.vat.usecase.evidence.other.CreateOtherTaxEvidenceService@6e9730c2, updateOtherEvidenceService=UpdateOtherEvidenceService(otherTaxEvidenceGateway=OtherEvidenceAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@23034316), fileGateway=LocalFileService(), config=EvidenceFileConfig(saveType=LOCAL, folderPath=./test/)), deleteEvidenceService=DeleteOtherTaxEvidenceService(otherTaxEvidenceGateway=OtherEvidenceAdapter(repo=org.springframework.data.jpa.repository.support.SimpleJpaRepository@23034316)))
+[2022-03-23 18:00:33,416][INFO][restartedMain][LoginService][<init>] new instance=LoginService(userGateway=com.gateweb.vat.dataprovider.adapter.UserAdapter@269bdb5a, passwordEncoder=org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder@6fde2ccb, jwtComponent=com.gateweb.vat.crypto.jwt.JWTComponent@23b0cee0)
+[2022-03-23 18:00:33,417][INFO][restartedMain][LoginApi][<init>] new instance=LoginApi(service=LoginService(userGateway=com.gateweb.vat.dataprovider.adapter.UserAdapter@269bdb5a, passwordEncoder=org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder@6fde2ccb, jwtComponent=com.gateweb.vat.crypto.jwt.JWTComponent@23b0cee0))
+[2022-03-23 18:00:33,418][INFO][restartedMain][CreateUserService][<init>] new instance=CreateUserService(accountingFirmGateway=com.gateweb.vat.dataprovider.adapter.AccountingFirmAdapter@5ebf3512, userGateway=com.gateweb.vat.dataprovider.adapter.UserAdapter@269bdb5a, passwordEncoder=org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder@6fde2ccb)
+[2022-03-23 18:00:33,418][INFO][restartedMain][FindUserService][<init>] new instance=FindUserService(userGateway=com.gateweb.vat.dataprovider.adapter.UserAdapter@269bdb5a)
+[2022-03-23 18:00:33,419][INFO][restartedMain][UpdateUserService][<init>] new instance=UpdateUserService(userGateway=com.gateweb.vat.dataprovider.adapter.UserAdapter@269bdb5a, passwordEncoder=org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder@6fde2ccb)
+[2022-03-23 18:00:33,419][INFO][restartedMain][UserApi][<init>] new instance=UserApi(createUserService=CreateUserService(accountingFirmGateway=com.gateweb.vat.dataprovider.adapter.AccountingFirmAdapter@5ebf3512, userGateway=com.gateweb.vat.dataprovider.adapter.UserAdapter@269bdb5a, passwordEncoder=org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder@6fde2ccb), findUserService=FindUserService(userGateway=com.gateweb.vat.dataprovider.adapter.UserAdapter@269bdb5a), updateUserService=UpdateUserService(userGateway=com.gateweb.vat.dataprovider.adapter.UserAdapter@269bdb5a, passwordEncoder=org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder@6fde2ccb))
+[2022-03-23 18:00:33,422][INFO][restartedMain][LogFilesController][<init>] new instance: com.gateweb.vat.endpoints.controller.LogFilesController@a9628d8
+[2022-03-23 18:00:33,449][INFO][restartedMain][UserDetailsServiceAutoConfiguration][getOrDeducePassword] 
+
+Using generated security password: e3eaeefd-47e6-4111-95dd-71ecc4552bc2
+
+[2022-03-23 18:00:33,491][INFO][restartedMain][DefaultSecurityFilterChain][<init>] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@970167a, org.springframework.security.web.context.SecurityContextPersistenceFilter@4cb06666, org.springframework.security.web.header.HeaderWriterFilter@7d417876, org.springframework.security.web.authentication.logout.LogoutFilter@32efba05, com.gateweb.vat.endpoints.api.filter.JwtAuthFilter@492120a9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2890b0b6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1c6beffa, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6549684b, org.springframework.security.web.session.SessionManagementFilter@5f7a389c, org.springframework.security.web.access.ExceptionTranslationFilter@520f6c5c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7dc1b9e2]
+[2022-03-23 18:00:34,016][INFO][restartedMain][OptionalLiveReloadServer][startServer] LiveReload server is running on port 35729
+[2022-03-23 18:00:34,019][INFO][restartedMain][EndpointLinksResolver][<init>] Exposing 2 endpoint(s) beneath base path '/actuator'
+[2022-03-23 18:00:34,052][INFO][restartedMain][TomcatWebServer][start] Tomcat started on port(s): 8080 (http) with context path ''
+[2022-03-23 18:00:34,061][INFO][restartedMain][OcrServerApplication][logStarted] Started OcrServerApplication in 3.359 seconds (JVM running for 3.673)
+[2022-03-23 18:00:34,268][INFO][RMI TCP Connection(2)-192.168.100.106][[/]][log] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2022-03-23 18:00:34,269][INFO][RMI TCP Connection(2)-192.168.100.106][DispatcherServlet][initServletBean] Initializing Servlet 'dispatcherServlet'
+[2022-03-23 18:00:34,270][INFO][RMI TCP Connection(2)-192.168.100.106][DispatcherServlet][initServletBean] Completed initialization in 1 ms
+[2022-03-23 18:00:37,830][DEBUG][http-nio-8080-exec-1][JwtAuthFilter][doFilterInternal] doFilterInternal() start
+[2022-03-23 18:00:37,830][DEBUG][http-nio-8080-exec-1][JwtAuthFilter][doFilterInternal] doFilterInternal() end
+[2022-03-23 18:00:37,861][DEBUG][http-nio-8080-exec-2][JwtAuthFilter][doFilterInternal] doFilterInternal() start
+[2022-03-23 18:00:37,861][DEBUG][http-nio-8080-exec-2][JwtAuthFilter][doFilterInternal] doFilterInternal() end
+[2022-03-23 18:00:37,887][DEBUG][http-nio-8080-exec-3][JwtAuthFilter][doFilterInternal] doFilterInternal() start
+[2022-03-23 18:00:37,888][DEBUG][http-nio-8080-exec-5][JwtAuthFilter][doFilterInternal] doFilterInternal() start
+[2022-03-23 18:00:37,888][DEBUG][http-nio-8080-exec-3][JwtAuthFilter][doFilterInternal] doFilterInternal() end
+[2022-03-23 18:00:37,888][DEBUG][http-nio-8080-exec-5][JwtAuthFilter][doFilterInternal] doFilterInternal() end
+[2022-03-23 18:00:37,888][DEBUG][http-nio-8080-exec-4][JwtAuthFilter][doFilterInternal] doFilterInternal() start
+[2022-03-23 18:00:37,888][DEBUG][http-nio-8080-exec-4][JwtAuthFilter][doFilterInternal] doFilterInternal() end
+[2022-03-23 18:00:37,952][DEBUG][http-nio-8080-exec-6][JwtAuthFilter][doFilterInternal] doFilterInternal() start
+[2022-03-23 18:00:37,952][DEBUG][http-nio-8080-exec-6][JwtAuthFilter][doFilterInternal] doFilterInternal() end
+[2022-03-23 18:00:37,952][DEBUG][http-nio-8080-exec-7][JwtAuthFilter][doFilterInternal] doFilterInternal() start
+[2022-03-23 18:00:37,952][DEBUG][http-nio-8080-exec-7][JwtAuthFilter][doFilterInternal] doFilterInternal() end
+[2022-03-23 18:00:37,971][DEBUG][http-nio-8080-exec-8][JwtAuthFilter][doFilterInternal] doFilterInternal() start
+[2022-03-23 18:00:37,971][DEBUG][http-nio-8080-exec-8][JwtAuthFilter][doFilterInternal] doFilterInternal() end
+[2022-03-23 18:00:38,213][INFO][http-nio-8080-exec-8][AbstractOpenApiResource][getOpenApi] Init duration for springdoc-openapi is: 233 ms
+[2022-03-23 18:00:50,071][INFO][SpringApplicationShutdownHook][LocalContainerEntityManagerFactoryBean][destroy] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2022-03-23 18:00:50,279][WARN][SpringApplicationShutdownHook][DisposableBeanAdapter][destroy] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+[2022-03-23 18:00:50,280][INFO][SpringApplicationShutdownHook][HikariDataSource][close] HikariPool-1 - Shutdown initiated...
+[2022-03-23 18:00:50,284][INFO][SpringApplicationShutdownHook][HikariDataSource][close] HikariPool-1 - Shutdown completed.
+[2022-03-23 18:00:50,284][INFO][SpringApplicationShutdownHook][HikariDataSource][close] HikariPool-1 - Shutdown completed.
+[2022-03-23 18:00:50,284][INFO][SpringApplicationShutdownHook][HikariDataSource][close] HikariPool-1 - Shutdown completed.
+
+[2022-03-23 18:00:50,284][INFO][SpringApplicationShutdownHook][HikariDataSource][close] HikariPool-1 - Shutdown completed.
+[2022-03-23 18:00:50,284][INFO][SpringApplicationShutdownHook][HikariDataSource][close] HikariPool-1 - Shutdown completed.
+[2022-03-23 18:00:50,284][INFO][SpringApplicationShutdownHook][HikariDataSource][close] HikariPool-1 - Shutdown completed.
+[2022-03-23 18:00:50,284][INFO][SpringApplicationShutdownHook][HikariDataSource][close] HikariPool-1 - Shutdown completed.
+[2022-03-23 18:00:50,284][INFO][SpringApplicationShutdownHook][HikariDataSource][close] HikariPool-1 - Shutdown completed.
+[2022-03-23 18:00:50,284][INFO][SpringApplicationShutdownHook][HikariDataSource][close] HikariPool-1 - Shutdown completed.
+[2022-03-23 18:00:50,284][INFO][SpringApplicationShutdownHook][HikariDataSource][close] HikariPool-1 - Shutdown completed.
+[2022-03-23 18:00:50,284][INFO][SpringApplicationShutdownHook][HikariDataSource][close] HikariPool-1 - Shutdown completed.
+
+[2022-03-23 18:00:50,284][INFO][SpringApplicationShutdownHook][HikariDataSource][close] HikariPool-1 - Shutdown completed.
+[2022-03-23 18:00:50,284][INFO][SpringApplicationShutdownHook][HikariDataSource][close] HikariPool-1 - Shutdown completed.
+[2022-03-23 18:00:50,284][INFO][SpringApplicationShutdownHook][HikariDataSource][close] HikariPool-1 - Shutdown completed.
+
+[2022-03-23 18:00:50,284][INFO][SpringApplicationShutdownHook][HikariDataSource][close] HikariPool-1 - Shutdown completed.
+[2022-03-23 18:00:50,284][INFO][SpringApplicationShutdownHook][HikariDataSource][close] HikariPool-1 - Shutdown completed.
+[2022-03-23 18:00:50,284][INFO][SpringApplicationShutdownHook][HikariDataSource][close] HikariPool-1 - Shutdown completed.
+[2022-03-23 18:00:50,284][INFO][SpringApplicationShutdownHook][HikariDataSource][close] HikariPool-1 - Shutdown completed.
+[2022-03-23 18:00:50,284][INFO][SpringApplicationShutdownHook][HikariDataSource][close] HikariPool-1 - Shutdown completed.
+[2022-03-23 18:00:50,284][INFO][SpringApplicationShutdownHook][HikariDataSource][close] HikariPool-1 - Shutdown completed.
+[2022-03-23 18:00:50,284][INFO][SpringApplicationShutdownHook][HikariDataSource][close] HikariPool-1 - Shutdown completed.
+[2022-03-23 18:00:50,284][INFO][SpringApplicationShutdownHook][HikariDataSource][close] HikariPool-1 - Shutdown completed.
+[2022-03-23 18:00:50,284][INFO][SpringApplicationShutdownHook][HikariDataSource][close] HikariPool-1 - Shutdown completed.
+[2022-03-23 18:00:50,284][INFO][SpringApplicationShutdownHook][HikariDataSource][close] HikariPool-1 - Shutdown completed.
+[2022-03-23 18:00:50,284][INFO][SpringApplicationShutdownHook][HikariDataSource][close] HikariPool-1 - Shutdown completed.
+[2022-03-23 18:00:50,284][INFO][SpringApplicationShutdownHook][HikariDataSource][close] HikariPool-1 - Shutdown completed.
+[2022-03-23 18:00:33,449][INFO][restartedMain][UserDetailsServiceAutoConfiguration][getOrDeducePassword] 
+[2022-03-23 18:00:33,449][INFO][restartedMain][UserDetailsServiceAutoConfiguration][getOrDeducePassword] 
+[2022-03-23 18:00:33,449][INFO][restartedMain][UserDetailsServiceAutoConfiguration][getOrDeducePassword] 
+[2022-03-23 18:00:33,449][INFO][restartedMain][UserDetailsServiceAutoConfiguration][getOrDeducePassword] 
+[2022-03-23 18:00:33,449][INFO][restartedMain][UserDetailsServiceAutoConfiguration][getOrDeducePassword] 
+[2022-03-23 18:00:33,449][INFO][restartedMain][UserDetailsServiceAutoConfiguration][getOrDeducePassword] 
+[2022-03-23 18:00:50,284][INFO][SpringApplicationShutdownHook][HikariDataSource][close] HikariPool-1 - Shutdown completed.
