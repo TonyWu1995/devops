@@ -12,3 +12,4 @@ docker/vault/file
 docker/prometheus/
 docker/prometheus/grafana
 docker/prometheus/node
+docker/postgres/postgres
