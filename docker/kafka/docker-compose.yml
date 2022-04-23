@@ -1,14 +1,15 @@
 version: '3'
 services:
   zookeeper:
-    image: wurstmeister/zookeeper
+    image: wurstmeister/zookeeper:latest
     ports:
       - "2181:2181"
   kafka:
-    image: wurstmeister/kafka
+    image: wurstmeister/kafka:2.13-2.8.1
     depends_on: [ zookeeper ]
     ports:
       - "9092:9092"
+      - "8083:8083"
     environment:
       KAFKA_LISTENERS: "INTERNAL://:29092,EXTERNAL://:9092"
       KAFKA_ADVERTISED_LISTENERS: "INTERNAL://kafka:29092,EXTERNAL://localhost:9092"
@@ -18,10 +19,23 @@ services:
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-  kafka-ui:
-    image: obsidiandynamics/kafdrop:3.27.0
+      # - ./kafka:/opt/kafka
+      # - ./connect-lib:/usr/share/java/kafka-connect-jdbc/
+  # kafka-ui:
+  #   image: obsidiandynamics/kafdrop:3.30.0
+  #   depends_on: [ kafka ]
+  #   ports:
+  #     - "9000:9000"
+  #   environment: 
+  #     KAFKA_BROKERCONNECT: "kafka:29092"
+  kafka-ui-2:
+    image: provectuslabs/kafka-ui
+    container_name: kafka-ui
     depends_on: [ kafka ]
     ports:
-      - "9000:9000"
-    environment: 
-      KAFKA_BROKERCONNECT: "kafka:29092"
+      - "8080:8080"
+    restart: always
+    environment:
+      - KAFKA_CLUSTERS_0_NAME=local
+      - KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=kafka:29092
+      - KAFKA_CLUSTERS_0_ZOOKEEPER=zookeeper:2181
