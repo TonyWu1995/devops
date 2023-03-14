@@ -3,7 +3,7 @@ services:
   redis:
     restart: always
     container_name: redis-server
-    image: redis:alpine
+    image: redis:6.2.7-alpine
     ports:
       - 6379:6379
   redis-exporter:
