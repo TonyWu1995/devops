@@ -5,7 +5,7 @@ services:
     image: nginx:1.21.0-alpine
     container_name: nginx
     volumes:
-      - ./ca/nginx.crt:/etc/nginx/ssl/nginx.crt
+      - ./ca/bundle.crt:/etc/nginx/ssl/nginx.crt
       - ./ca/nginx.key:/etc/nginx/ssl/nginx.key
       - ./conf.d:/etc/nginx/conf.d/
       - ./log:/var/log/nginx

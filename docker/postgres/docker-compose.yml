@@ -15,7 +15,18 @@ services:
     networks:
       - postgres
     restart: unless-stopped
-  
+    hostname: your-name
+    labels:
+      appName: NathanLu
+      gender: female
+      hostname: test
+    logging:
+      driver: "gelf"
+      options:
+        gelf-address: "udp://192.168.1.25:12201"
+        # docker run --rm --name test --label appName=NathanLu --label gender=male --label slogan=seagon --log-opt labels=appName,gender,slogan --log-driver=gelf --log-opt gelf-address=udp://192.168.1.25:12201 -d busybox sh -c "while true; do $(echo date); sleep 1; done"
+        labels: appName,gender,hostname
+
   pgadmin:
     container_name: pgadmin
     image: dpage/pgadmin4
