@@ -10,11 +10,11 @@ services:
       timeout: 25s
       retries: 5
     ports:
-      - 1883:1883
-      - 8083:8083
-      - 8084:8084
-      - 8883:8883
-      - 18083:18083 
+      - 1883:1883 ## tcp
+      - 8083:8083 ## websockeet
+      - 8084:8084 ## websocket ssl
+      - 8883:8883 ## ssl
+      - 18083:18083 ## web
     volumes:
       - ./data:/opt/emqx/data
 
